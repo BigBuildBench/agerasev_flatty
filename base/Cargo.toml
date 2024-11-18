@@ -1,0 +1,16 @@
+[package]
+name = "flatty-base"
+version.workspace = true
+edition.workspace = true
+
+description = "Flatty traits and primitives"
+authors.workspace = true
+repository.workspace = true
+license.workspace = true
+
+[features]
+default = ["std"]
+std = ["alloc", "stavec/std"]
+alloc = []
+
+[dependencies]

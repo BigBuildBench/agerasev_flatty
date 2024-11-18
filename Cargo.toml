@@ -1,0 +1,40 @@
+[workspace.package]
+version = "0.1.0-rc.4"
+edition = "2021"
+rust-version = "1.69"
+
+authors = ["Alexey Gerasev <alexey.gerasev@gmail.com>"]
+homepage = "https://gitlab.com/agerasev/flatty"
+repository = "https://gitlab.com/agerasev/flatty.git"
+license = "MIT/Apache-2.0"
+readme = "README.md"
+
+[workspace.dependencies]
+flatty-macros = { path = "macros", version = "0.1.0-rc.4" }
+flatty-base = { path = "base", version = "0.1.0-rc.4", default-features = false }
+flatty-portable = { path = "portable", version = "0.1.0-rc.4", default-features = false }
+flatty = { path = ".", version = "0.1.0-rc.4", default-features = false }
+
+[package]
+name = "flatty"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+description = "Flat message buffers"
+authors.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license.workspace = true
+readme.workspace = true
+documentation = "https://docs.rs/flatty"
+
+[features]
+default = ["std"]
+std = ["alloc", "flatty-base/std", "flatty-portable/std"]
+alloc = ["flatty-base/alloc"]
+
+[dependencies]
+
+[workspace]
+members = ["io", "tests"]

@@ -1,0 +1,15 @@
+[package]
+name = "flatty-portable"
+version.workspace = true
+edition.workspace = true
+
+description = "Flatty portable trait and primitives"
+authors.workspace = true
+repository.workspace = true
+license.workspace = true
+
+[features]
+default = ["std"]
+std = ["flatty-base/std", "num-traits/std"]
+
+[dependencies]
